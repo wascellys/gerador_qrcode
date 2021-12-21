@@ -48,7 +48,7 @@ def gerador_qrcode(request):
 
 
 
-    data = 'http://'+ip+":8000/cardapio"
+    data = "https://praciano123.pythonanywhere.com/cardapio"
     qr.add_data(data)
     qr.make(fit=True)
     img = qr.make_image(fill='black', back_color='white')
