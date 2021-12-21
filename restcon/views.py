@@ -120,7 +120,7 @@ def url_cardapio(request):
 
     imagem = '/static/img/pdf.png'
 
-    existing_pdf = PdfFileReader("media/modelo/cardapio_modelo_link.pdf")
+    existing_pdf = PdfFileReader("/media/modelo/cardapio_modelo_link.pdf")
 
 
     buffer = BytesIO()
