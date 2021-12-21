@@ -36,27 +36,32 @@ from restcon.models import Cardapio
 
 
 def gerador_qrcode(request):
-	import socket
-
-	hostname = socket.gethostname()
-	ip = socket.gethostbyname(hostname)
-	qr = qrcode.QRCode(
-			version=1,
-			box_size=15,
-			border=4
-	)
 
 
+	if request.method == 'POST':
+		import socket
 
-	data = "https://praciano123.pythonanywhere.com/cardapio"
-	qr.add_data(data)
-	qr.make(fit=True)
-	img = qr.make_image(fill='black', back_color='white')
-	img.save('../cardapiovirtual/restcon/static/img/qrcode_gerado.png')
+		hostname = socket.gethostname()
+		ip = socket.gethostbyname(hostname)
+		qr = qrcode.QRCode(
+				version=1,
+				box_size=15,
+				border=4
+		)
 
-	image = '/static/img/qrcode_gerado.png'
 
-	return render(request, 'qrcode.html', {'qrcode': image})
+
+		data = "https://praciano123.pythonanywhere.com/cardapio"
+		qr.add_data(data)
+		qr.make(fit=True)
+		img = qr.make_image(fill='black', back_color='white')
+		img.save('../cardapiovirtual/restcon/static/img/qrcode_gerado.png')
+
+		image = '/static/img/qrcode_gerado.png'
+
+		return render(request, 'qrcode.html', {'qrcode': image})
+	else:
+		return render(request, 'qrcode.html')
 
 
 def gerador_qrcode_pdf(request):
