@@ -118,7 +118,7 @@ def url_cardapio(request):
     img = qr.make_image(fill='black', back_color='white')
     img.save('/home/praciano123/praciano123.pythonanywhere.com/static/img/pdf.png')
 
-    imagem = '/static/img/pdf.png'
+    imagem = '/home/praciano123/praciano123.pythonanywhere.com/static/img/pdf.png'
 
     existing_pdf = PdfFileReader("/home/praciano123/praciano123.pythonanywhere.com/media/modelo/cardapio_modelo_link.pdf")
 
