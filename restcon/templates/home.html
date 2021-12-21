@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+
+    <ul class="collection">
+
+        {% for categoria in categorias %}
+        <a href="{% url 'produtos' categoria.pk %}" class="collection-item avatar" style="margin: 10px; border-radius:10px;">
+
+            <i class="material-icons circle red darken-4">restaurant</i>
+            <span class="title">{{categoria.descricao}}</span class="title">
+        </a>
+        {% endfor %}
+    </ul>
+
+
+{% endblock%}

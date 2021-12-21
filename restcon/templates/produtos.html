@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+
+    <ul class="collection" style="border:0px;" >
+
+        {% for produto in produtos %}
+        <li href="" class="collection-item avatar" style="margin: 10px; border-radius:10px;;>
+            <span class="title">{{produto.descricao.upper}}</span>
+            <a class="secondary-content"><h6>R$ {{produto.valor}}</h6></a>
+        </li>
+        {% empty %}
+
+        <h6 class="text-center">Nenhum produto cadastrados!</h6>
+        {% endfor %}
+    </ul>
+
+
+{% endblock%}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static%}
+
+
+{% block content%}
+
+<!--<h5 class="text-center">Informe o link do seu cardapio</h5>-->
+<!--<form action="#">-->
+<!--    <input type="file">-->
+<!--    </div>-->
+<!--</form>-->
+
+
+<div class="col s12">
+    <div class="card">
+        <div class="card-stacked">
+            <div class="card-content">
+                <form class="col s6" action="{% url 'url_cardapio' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <h5>Logo do estabelecimento</h5>
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>Abrir</span>
+                                <input type="file" name="logo">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate"  type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <h5>Informe o caminho do arquivo</h5>
+                        <div class="input-field col s12 m6">
+
+                            <input type="text" class="validate" name="url_cardapio">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <button class="waves-effect waves-light btn" type="submit">Gerar Display</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<img src="{% static 'img/qrcode_gerado.png' %}" class="img-responsive" >-->
+{% endblock%}
+
+
+
