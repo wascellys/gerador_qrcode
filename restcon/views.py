@@ -55,7 +55,7 @@ def gerador_qrcode(request):
 		qr.add_data(data)
 		qr.make(fit=True)
 		img = qr.make_image(fill='black', back_color='white')
-		img.save('../cardapiovirtual/restcon/static/img/qrcode_gerado.png')
+		img.save('/home/praciano123/praciano123.pythonanywhere.com/static/img/qrcode_gerado.png')
 
 		image = '/static/img/qrcode_gerado.png'
 
@@ -75,11 +75,11 @@ def gerador_qrcode_pdf(request):
         border=4
     )
 
-    data = 'http://'+ip+":8000/static/cardapio/cardapio.pdf"
+    data = "https://praciano123.pythonanywhere.com/cardapio/cardapio.pdf"
     qr.add_data(data)
     qr.make(fit=True)
     img = qr.make_image(fill='black', back_color='white')
-    img.save('../cardapiovirtual/restcon/static/img/pdf.png')
+    img.save('/home/praciano123/praciano123.pythonanywhere.com/static/img/pdf.png')
 
 
     return render(request, 'qrcode.html', {'qrcode': img})
@@ -116,9 +116,9 @@ def url_cardapio(request):
     qr.add_data(data)
     qr.make(fit=True)
     img = qr.make_image(fill='black', back_color='white')
-    img.save('../cardapiovirtual/restcon/static/img/pdf.png')
+    img.save('/home/praciano123/praciano123.pythonanywhere.com/static/img/pdf.png')
 
-    imagem = '../cardapiovirtual/restcon/static/img/pdf.png'
+    imagem = '/static/img/pdf.png'
 
     existing_pdf = PdfFileReader("media/modelo/cardapio_modelo_link.pdf")
 
